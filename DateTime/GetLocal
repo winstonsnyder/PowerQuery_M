@@ -1,1 +1,2 @@
+//GetRefreshDateAndTime
 = #table(type table [RunDate=datetime], {{DateTime.FixedLocalNow()}})
