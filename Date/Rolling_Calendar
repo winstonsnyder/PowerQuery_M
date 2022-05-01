@@ -1,1 +1,5 @@
+//Enter start date as source
+#date(2018,1,1)
 
+//Formula for Rolling
+= List.Dates(Source, Number.From(DateTime.LocalNow())-Number.From(Source),#duration(1,0,0,0))
