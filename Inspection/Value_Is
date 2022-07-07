@@ -1,0 +1,2 @@
+Custom Column [Name] = 
+Value.Is(Value.FromText([Field]),Number.Type)
