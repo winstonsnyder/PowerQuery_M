@@ -15,4 +15,7 @@
 
 --Get First Letter Of Day Of Week
 Text.Start([Day Name], 1) & Text.Repeat(Character.FromNumber(8203), [Day of Week])
+
+--Get First Letter Name of Month
+Text.Start([Month Name],1) & Text.Repeat(Character.FromNumber(8203), [Month])
   
