@@ -1,5 +1,7 @@
 /*
 * This is the general form of a python script to be run in Power Query
+* https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-python-scripts
+* Do not incl comments when copy/paste to power bi.
 */
 import pandas as pd
 data = [['Alex',10],['Bob',12],['Clarke',13]]
