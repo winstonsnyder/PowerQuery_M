@@ -1,1 +1,18 @@
+/*
+* Single Letter Day and Month Names
+* Daniil Maslyuk
+* https://xxlbi.com/blog/single-letter-day-month-names/
+*/
 
+--Create Date Table
+#table(
+  type table [Date=date, Day Name=text, Day of Week=Int64.Type],
+  List.Transform(
+    List.Dates(#date(2021, 1, 1), 7, #duration(1, 0, 0, 0)),
+    each {_, Date.DayOfWeekName(_), Date.DayOfWeek(_)}
+  )
+)
+
+--Get First Letter Of Day Of Week
+Text.Start([Day Name], 1) & Text.Repeat(Character.FromNumber(8203), [Day of Week])
+  
