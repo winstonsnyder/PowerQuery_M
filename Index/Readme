@@ -1,0 +1,7 @@
+/*
+* Add a unique index to a monthly date table using month and year 
+*/
+Number.From(Text.Combine({
+    Text.From([Year]), 
+    Text.PadStart(Text.From([Month]), 2, "0")
+    },"."))
