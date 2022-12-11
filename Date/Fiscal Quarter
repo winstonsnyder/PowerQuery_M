@@ -1,0 +1,1 @@
+"FY" & Date.ToText([Date],"yyyy") & " Q" & Number.ToText(Date.QuarterOfYear( [Date] ),"0")
