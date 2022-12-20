@@ -1,0 +1,15 @@
+/*
+ * Function: GetNamedRange
+ * Author : John MacDougall
+ * URL: https://www.howtoexcel.org/how-to-reference-a-named-range-in-power-query/
+*/
+
+let GetNamedRange=(NamedRange) =>
+ 
+let
+	name = Excel.CurrentWorkbook(){[Name=NamedRange]}[Content],
+	value = name{0}[Column1]
+in
+	value
+
+in GetNamedRange
