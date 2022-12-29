@@ -1,0 +1,15 @@
+/*
+* Remove blank Columns in Table
+*/
+(Source as table) as table =>
+
+let
+    RemoveEmptyColumns = Table.SelectColumns(
+        Source,
+        List.Select(
+            Table.ColumnNames(Source),
+            each List.NonNullCount(Table.Column(Source,_)) <> 0  
+        )
+    )
+    in
+    RemoveEmptyColumns
