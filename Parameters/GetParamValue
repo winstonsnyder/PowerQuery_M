@@ -1,0 +1,16 @@
+/*
+ * Custom function to get parameter values from a table on the worksheet
+ * Table name : Parameters
+ * Col1 name : Parameter
+ * Col2 name : Value
+*/
+(ParameterName as text) =>
+let
+ParamSource = Excel.CurrentWorkbook(){[Name="Parameters"]}[Content],
+ParamRow = Table.SelectRows(ParamSource, each ([Parameter] = ParameterName)),
+Value=
+if Table.IsEmpty(ParamRow)=true
+then null
+else Record.Field(ParamRow{0},"Value")
+in
+Value
