@@ -2,22 +2,12 @@
 * Extended Date Tale
 * Enterprise DNA
 * Melissa de Korte
+* URL1: https://www.youtube.com/watch?v=r09wlvwMh50
+* URL2: https://forum.enterprisedna.co/t/extended-date-table-power-query-m-function/6390
 */
-
-
-
-
 
 let fnDateTable = ( StartDate as date, EndDate as date, optional FYStartMonthNum as number, optional Holidays as list, optional WDStartNum as number, optional AddRelativeNetWorkdays as logical ) as table =>
   let
-    //Set variables here
-      StartDate = #date(2018, 1, 1),
-      EndDate = #date(Date.Year( CurrentDate ) +1, 12, 31),
-      FYStartMonthNum = 7,
-      Holidays = null,
-      WDStartNum = 1,
-      
-      //Date Table code starts here
       FYStartMonth = List.Select( {1..12}, each _ = FYStartMonthNum ){0}? ?? 1,
       WDStart = List.Select( {0..1}, each _ = WDStartNum ){0}? ?? 0,
       CurrentDate = Date.From( DateTime.FixedLocalNow()),
