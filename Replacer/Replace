@@ -1,0 +1,5 @@
+//To replace a value in a table
+= Table.ReplaceValue(#"Changed Type1",
+each [Channel],
+each if [Advertiser] = "Cross Screen Media/POL PMP" then "Political" else [Channel],
+Replacer.ReplaceText,{"Channel"})
