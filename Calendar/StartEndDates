@@ -1,0 +1,8 @@
+-- Rick de Groot
+-- https://gorilla.bi/power-query/date-table/
+
+List.Generate(
+    () => StartDate,
+    each _ <= EndDate,
+    each Date.AddDays(_, 1)
+)
