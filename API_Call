@@ -1,0 +1,8 @@
+-- Rick de Groot
+-- https://www.youtube.com/watch?v=a_RJzoj1cnM
+
+= List.Generate(
+() => [offset = 100, pokemon = FnGetPokemon( 0 )] ,
+each not List.IsEmpty( [pokemon][results]),
+each [offset = [offset] + 100 , pokemon = FnGetPokemon( [offset] ) ],
+each [pokemon]
