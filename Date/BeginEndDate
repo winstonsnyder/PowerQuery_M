@@ -1,0 +1,17 @@
+let
+    Source = List.Min(Data[END_DATE]),
+    #"Converted to Table" = #table(1, {{Source}}),
+    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Begin_Date"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Begin_Date", type date}})
+in
+    #"Changed Type"
+	
+	
+let
+    Source = List.Max(Data[END_DATE]),
+    #"Converted to Table" = #table(1, {{Source}}),
+    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "End_Date"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"End_Date", type date}})
+in
+    #"Changed Type"
+	
