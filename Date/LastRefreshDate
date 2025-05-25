@@ -1,0 +1,12 @@
+let
+    Source = DateTime.LocalNow(),
+    #"Converted to Table" = #table(1, {{Source}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type datetime}}),
+    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Last Refresh Date"}})
+in
+    #"Renamed Columns"
+
+Refresh Date = 
+    "Refresh Date:" &
+    UNICHAR(10) &
+    FORMAT( SELECTEDVALUE( 'Last Refreshed Date'[Last Refresh Date] ), "MMM DD, YYYY" )
